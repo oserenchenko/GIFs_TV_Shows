@@ -15,19 +15,44 @@ function makeButtons() {
 }
 
 function displayGifs() {
-  var tvShow = $(this).attr("showName");
-  var queryURL = "https:/api.giphy.com/v1/gifs/search?api_key=qL0YObgRkosgTuGJFuZX2DFFSetWSrE6&q=" + tvShow ;
+  var tvShow = $(this).attr('showName');
+  var queryURL = 'https:/api.giphy.com/v1/gifs/search?api_key=qL0YObgRkosgTuGJFuZX2DFFSetWSrE6&limit=10&q=' + tvShow ;
 
   $.ajax({
     url: queryURL,
     method: 'GET'
   }).then(function(response) {
-    console.log(response);
-    var url = response.data[0].url
-    $('.gifResults').append('<img src=' + url + '>');
+    $('.gifResults').empty();
+    for (var i = 0; i < response.data.length; i++) {
+      var newImg = $('<img>');
+      newImg.attr({
+        class: 'gifImage',
+        'data-state': 'still',
+        alt: 'gif image',
+        src: response.data[i].images.fixed_height_still.url,
+        'still': response.data[i].images.fixed_height_still.url,
+        'gif': response.data[i].images.fixed_height.url
+      });
+      $('.gifResults').append(newImg);
+    }
+    $('.gifImage').on('click', function() {
+      var state = $(this).attr('data-state');
+      if (state == 'still') {
+        $(this).attr('src', $(this).attr('gif'));
+        $(this).attr('data-state', 'gif');
+      } else if (state == 'gif') {
+        $(this).attr('src', $(this).attr('still'));
+        $(this).attr('data-state', 'still');
+      }
+    });    
   })
 }
 
+
+
+
+
+
   makeButtons();
 
-  $(document).on("click", ".showButton", displayGifs);
+  $(document).on('click', '.showButton', displayGifs);
