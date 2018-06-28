@@ -5,22 +5,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Cinzel|Monda" rel="stylesheet">
   <title>TV Shows GIF App</title>
 </head>
 
 <body>
   <h1>TV Show GIFs</h1>
-
-  <div class='buttons'></div>
-
-  <form>
-    <p>Add a Show:</p>
-    <input name='showName' type='text' id='newTvShowToAdd'>
-    <button type='submit' id='submitBtn'>Submit</button>
-  </form>
-
-  <div class='gifResults'></div>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-sm-12 col-md-8'>
+        <div class='buttons'></div>
+      </div>
+      <div class='col-sm-12 col-md-4'>
+        <form>
+          <input name='showName' type='text' id='newTvShowToAdd' placeholder="Add a Show" onfocus="if(this.value == this.value) { this.value = ''; }">
+          <button type='submit' id='submitBtn'>Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class='row mt-3'>
+      <div class='col-md-12'>
+        <div class='gifResults'></div>
+      </div>
+    </div>
+  </div>
 
 
 

@@ -1,3 +1,71 @@
+body {
+  font-family: 'Monda', sans-serif;
+  background-color: #5D576B;
+}
+
+
+h1 {
+  font-family: 'Cinzel', serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  font-size: 75px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.container {
+  background-color: #D3D5D4;
+  padding: 20px;
+  border: 5px solid #A9A9A9;
+  margin-bottom: 30px;
+}
+
 .showButton {
   text-transform: capitalize;
+  text-align: center;
+  width: 200px;
+  height: 35px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  border-color: #5D576B;
+  border-radius: 10px;
+  color: #665687;
+}
+
+#newTvShowToAdd {
+  width: 300px;
+  background-color: white;
+  border: 1.5px solid #5D576B;
+  height: 40px;
+  margin-top: 25px;
+}
+
+#submitBtn {
+  display: block;
+  background-color: white;
+  border: 1.5px solid #5D576B;
+  font-size: 15px;
+  margin-top: 15px;
+}
+
+.gifImage {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #5D576B;
+}
+
+.showButton:hover {
+  cursor: pointer;
+}
+
+#submitBtn:hover {
+  cursor: pointer;
+}
+
+.gifImage:hover {
+  cursor: pointer;
 }

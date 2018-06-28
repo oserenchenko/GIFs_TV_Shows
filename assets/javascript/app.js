@@ -23,6 +23,7 @@ function displayGifs() {
     url: queryURL,
     method: 'GET'
   }).then(function (response) {
+    console.log(response);
     $('.gifResults').empty();
     for (var i = 0; i < response.data.length; i++) {
       var newImg = $('<img>');
@@ -32,7 +33,8 @@ function displayGifs() {
         alt: 'gif image',
         src: response.data[i].images.fixed_height_still.url,
         'still': response.data[i].images.fixed_height_still.url,
-        'gif': response.data[i].images.fixed_height.url
+        'gif': response.data[i].images.fixed_height.url.
+        'rating': response.data[i].rating
       });
       $('.gifResults').append(newImg);
     }
