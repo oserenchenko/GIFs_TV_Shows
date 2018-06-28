@@ -60,9 +60,11 @@ $("#submitBtn").on("click", function (event) {
   event.preventDefault();
   var newTvShow = $("#newTvShowToAdd").val().trim();
   if (tvShows.indexOf(newTvShow.toLowerCase()) < 0) {
-    console.log(tvShows.indexOf(newTvShow));
-    tvShows.push(newTvShow);
-    makeButtons();
+    if (newTvShow != "") {
+      console.log(tvShows.indexOf(newTvShow));
+      tvShows.push(newTvShow);
+      makeButtons();
+    }
   }
 });
 
