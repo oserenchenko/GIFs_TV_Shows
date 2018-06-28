@@ -26,17 +26,22 @@ function displayGifs() {
     console.log(response);
     $('.gifResults').empty();
     for (var i = 0; i < response.data.length; i++) {
+      var newImgDiv = $('<div>');
       var newImg = $('<img>');
+      var newImgRating = $('<div>');
       newImg.attr({
         class: 'gifImage',
         'data-state': 'still',
         alt: 'gif image',
         src: response.data[i].images.fixed_height_still.url,
         'still': response.data[i].images.fixed_height_still.url,
-        'gif': response.data[i].images.fixed_height.url.
-        'rating': response.data[i].rating
+        'gif': response.data[i].images.fixed_height.url,
       });
-      $('.gifResults').append(newImg);
+      newImgRating.addClass('gifImageRating');
+      newImgRating.text('Rating: ' + response.data[i].rating);
+      newImgDiv.addClass('gifDiv');
+      newImgDiv.append(newImg, newImgRating);
+      $('.gifResults').append(newImgDiv);
     }
     $('.gifImage').on('click', function () {
       var state = $(this).attr('data-state');
