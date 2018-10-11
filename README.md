@@ -14,7 +14,7 @@ ______________
 ## Visit the deployed version of Nomad-Travelr
 [GIFs TV Shows](https://oserenchenko.github.io/GIFs_TV_Shows/)
 
-![homepage]()
+![homepage](TVShowGifs.png)
 ______________
 ______________
 ______________
